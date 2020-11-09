@@ -1,0 +1,26 @@
+﻿@using Bookish.Models
+@model Bookish.ViewModel.RandomViewModel
+@{
+    ViewBag.Title = "Random";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{
+    var classtype = Model.Customers.Count > 0 ? "Popular" : null;
+}
+
+<h2 class="@classtype">@Model.Book.Name</h2>
+@if (Model.Customers.Count == 0)
+{
+    <text>"There are no customers who rented this book"</text>
+}
+else
+{
+    <ul>
+        @foreach (var customer in Model.Customers)
+        {
+            <li>customer</li>
+        }
+    </ul>
+}
+

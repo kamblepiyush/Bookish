@@ -1,0 +1,30 @@
+﻿@model IEnumerable<Bookish.Models.Book>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Books</h2>
+@if (!Model.Any())
+{
+    <p>There are no books listed yet.</p>
+}
+else
+{
+    <table class="table table-bordered table-hover">
+        <thead>
+        <tr>
+            <th>Book</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var book in Model)
+        {
+            <tr>
+                <td>@book.Name</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}
+
