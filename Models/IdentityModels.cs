@@ -22,6 +22,8 @@ namespace Bookish.Models
     {
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Book> Books { get; set; }
+        public DbSet<Genre> Genres { get; set; }
+        public DbSet<Format> Formats { get; set; }
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {

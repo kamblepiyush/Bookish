@@ -5,6 +5,9 @@ namespace Bookish.Migrations
     
     public partial class InitialModel : DbMigration
     {
+        //add-migration <name> to create a migration
+        //add-migration <name> -force (to override the migration)
+        //update-database to post changes in database
         public override void Up()
         {
             CreateTable(
