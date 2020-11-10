@@ -187,10 +187,56 @@
     <Compile Include="Migrations\202011091752130_AddMembershipType.Designer.cs">
       <DependentUpon>202011091752130_AddMembershipType.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202011100539408_PopulateMembershipTypes.cs" />
+    <Compile Include="Migrations\202011100539408_PopulateMembershipTypes.Designer.cs">
+      <DependentUpon>202011100539408_PopulateMembershipTypes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011100602589_ApplyAnnotationsToCustomerName.cs" />
+    <Compile Include="Migrations\202011100602589_ApplyAnnotationsToCustomerName.Designer.cs">
+      <DependentUpon>202011100602589_ApplyAnnotationsToCustomerName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011101008243_AddNameToMembershipType.cs" />
+    <Compile Include="Migrations\202011101008243_AddNameToMembershipType.Designer.cs">
+      <DependentUpon>202011101008243_AddNameToMembershipType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011101009480_UpdateMembershiptypesForName.cs" />
+    <Compile Include="Migrations\202011101009480_UpdateMembershiptypesForName.Designer.cs">
+      <DependentUpon>202011101009480_UpdateMembershiptypesForName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011101020156_AddBirthColumnToCustomers.cs" />
+    <Compile Include="Migrations\202011101020156_AddBirthColumnToCustomers.Designer.cs">
+      <DependentUpon>202011101020156_AddBirthColumnToCustomers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011101058588_AddGenre.cs" />
+    <Compile Include="Migrations\202011101058588_AddGenre.Designer.cs">
+      <DependentUpon>202011101058588_AddGenre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011101118068_AddGenreTypes.cs" />
+    <Compile Include="Migrations\202011101118068_AddGenreTypes.Designer.cs">
+      <DependentUpon>202011101118068_AddGenreTypes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011101134340_AddGenreTypesModified.cs" />
+    <Compile Include="Migrations\202011101134340_AddGenreTypesModified.Designer.cs">
+      <DependentUpon>202011101134340_AddGenreTypesModified.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011101236381_AddBooksUpdated.cs" />
+    <Compile Include="Migrations\202011101236381_AddBooksUpdated.Designer.cs">
+      <DependentUpon>202011101236381_AddBooksUpdated.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011101238234_AddFormatValues.cs" />
+    <Compile Include="Migrations\202011101238234_AddFormatValues.Designer.cs">
+      <DependentUpon>202011101238234_AddFormatValues.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011101251339_AddedAutherInBooks.cs" />
+    <Compile Include="Migrations\202011101251339_AddedAutherInBooks.Designer.cs">
+      <DependentUpon>202011101251339_AddedAutherInBooks.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Book.cs" />
     <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\Format.cs" />
+    <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MembershipType.cs" />
@@ -259,6 +305,7 @@
     <Content Include="Views\Customers\Detail.cshtml" />
     <Content Include="Views\Customers\Index.cshtml" />
     <Content Include="Views\Books\Index.cshtml" />
+    <Content Include="Views\Books\Detail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -285,6 +332,39 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202011091752130_AddMembershipType.resx">
       <DependentUpon>202011091752130_AddMembershipType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011100539408_PopulateMembershipTypes.resx">
+      <DependentUpon>202011100539408_PopulateMembershipTypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011100602589_ApplyAnnotationsToCustomerName.resx">
+      <DependentUpon>202011100602589_ApplyAnnotationsToCustomerName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011101008243_AddNameToMembershipType.resx">
+      <DependentUpon>202011101008243_AddNameToMembershipType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011101009480_UpdateMembershiptypesForName.resx">
+      <DependentUpon>202011101009480_UpdateMembershiptypesForName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011101020156_AddBirthColumnToCustomers.resx">
+      <DependentUpon>202011101020156_AddBirthColumnToCustomers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011101058588_AddGenre.resx">
+      <DependentUpon>202011101058588_AddGenre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011101118068_AddGenreTypes.resx">
+      <DependentUpon>202011101118068_AddGenreTypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011101134340_AddGenreTypesModified.resx">
+      <DependentUpon>202011101134340_AddGenreTypesModified.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011101236381_AddBooksUpdated.resx">
+      <DependentUpon>202011101236381_AddBooksUpdated.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011101238234_AddFormatValues.resx">
+      <DependentUpon>202011101238234_AddFormatValues.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011101251339_AddedAutherInBooks.resx">
+      <DependentUpon>202011101251339_AddedAutherInBooks.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

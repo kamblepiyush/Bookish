@@ -13,17 +13,19 @@ else
 {
     <table class="table table-bordered table-hover">
         <thead>
-        <tr>
-            <th>Book</th>
-        </tr>
+            <tr>
+                <th>Book</th>
+                <th>Genre</th>
+            </tr>
         </thead>
         <tbody>
-        @foreach (var book in Model)
-        {
-            <tr>
-                <td>@book.Name</td>
-            </tr>
-        }
+            @foreach (var book in Model)
+            {
+                <tr>
+                    <td>@Html.ActionLink(book.Name, "Detail", "Books", new { id = book.Id },null)</td>
+                    <td>@book.Genre.GenreType</td>
+                </tr>
+            }
         </tbody>
     </table>
 }
