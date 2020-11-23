@@ -8,7 +8,7 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Bookish.Models;
 
-namespace Bookish.Controllers
+namespace Bookish.Dtos
 {
     [Authorize]
     public class ManageController : Controller

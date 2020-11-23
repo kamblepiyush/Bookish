@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using AutoMapper;
 
 namespace Bookish.Models
 {
@@ -8,6 +9,12 @@ namespace Bookish.Models
         [Required]
         [Display(Name = "Email")]
         public string Email { get; set; }
+
+        [Required]
+        [Phone]
+        [DataType(DataType.PhoneNumber)]
+        [Display(Name = "Mobile Number")]
+        public string MobileNumber { get; set; }
     }
 
     public class ExternalLoginListViewModel
@@ -79,6 +86,12 @@ namespace Bookish.Models
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+
+        [Required]
+        [Phone]
+        [DataType(DataType.PhoneNumber)]
+        [Display(Name = "Mobile Number")]
+        public string MobileNumber { get; set; }
     }
 
     public class ResetPasswordViewModel

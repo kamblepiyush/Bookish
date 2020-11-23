@@ -8,6 +8,8 @@ namespace Bookish
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
             filters.Add(new HandleErrorAttribute());
+            filters.Add(new AuthorizeAttribute()); // to Authorize globally
+            filters.Add(new RequireHttpsAttribute()); //to allow https only
         }
     }
 }

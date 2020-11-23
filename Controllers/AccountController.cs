@@ -9,8 +9,9 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Bookish.Models;
+using Microsoft.AspNet.Identity.EntityFramework;
 
-namespace Bookish.Controllers
+namespace Bookish.Dtos
 {
     [Authorize]
     public class AccountController : Controller
@@ -151,10 +152,16 @@ namespace Bookish.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = new ApplicationUser { UserName = model.Email, Email = model.Email, MobileNumber = model.MobileNumber};
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
+                    //Temp code
+                    //var roleStore = new RoleStore<IdentityRole>(new ApplicationDbContext());
+                    //var roleManager =new RoleManager<IdentityRole>(roleStore);
+                    //await roleManager.CreateAsync(new IdentityRole("CanManageBooks"));
+                    //await UserManager.AddToRoleAsync(user.Id, "CanManageBooks");
+
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
                     
                     // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771
@@ -367,7 +374,7 @@ namespace Bookish.Controllers
                 {
                     return View("ExternalLoginFailure");
                 }
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = new ApplicationUser { UserName = model.Email, Email = model.Email, MobileNumber = model.MobileNumber };
                 var result = await UserManager.CreateAsync(user);
                 if (result.Succeeded)
                 {

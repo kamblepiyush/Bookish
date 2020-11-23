@@ -1,0 +1,50 @@
+﻿@model Bookish.ViewModel.BookFormViewModel
+@{
+    ViewBag.Title = "BookForm";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@Model.Title</h2>
+@using (@Html.BeginForm("Save", "Books"))
+{
+    @Html.ValidationSummary(true,"Please fix following error")
+    <div class="form-group">
+        @Html.LabelFor(b => b.Name)
+        @Html.TextBoxFor(b => b.Name, new { @class = "form-control" })
+        @Html.ValidationMessageFor(b=>b.Name)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(b => b.Author)
+        @Html.TextBoxFor(b => b.Author, new { @class = "form-control" })
+        @Html.ValidationMessageFor(b => b.Author)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(b => b.GenreId)
+        @Html.DropDownListFor(b => b.GenreId, new SelectList(Model.Genres, "Id", "GenreType"),"Select Genre Type", new { @class = "form-control" })
+        @Html.ValidationMessageFor(b => b.GenreId)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(b => b.ReleaseDate)
+        @Html.TextBoxFor(b => b.ReleaseDate, "{0:d MMM yyyy}", new { @class = "form-control" })
+        @Html.ValidationMessageFor(b => b.ReleaseDate)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(b => b.FormatId)
+        @Html.DropDownListFor(b => b.FormatId, new SelectList(Model.Formats, "Id", "Name"),"Select Format", new { @class = "form-control" })
+        @Html.ValidationMessageFor(b => b.FormatId)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(b => b.NumberInStock)
+        @Html.TextBoxFor(b => b.NumberInStock, new { @class = "form-control" })
+        @Html.ValidationMessageFor(b => b.NumberInStock)
+    </div>
+    @Html.HiddenFor(b=>b.Id)
+    @Html.AntiForgeryToken()
+    <button type="submit" class="btn btn-primary">Save</button>
+}
+
+@section scripts
+{
+    @Scripts.Render("/bundles/jqueryval")
+}
+
